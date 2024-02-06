@@ -1,0 +1,5 @@
+tile.bunnomod.ore.brownCoal.stone.name=Brown Coal Ore
+tile.bunnomod.ore.brownCoal.stone.desc=Not efficient coal
+
+item.bunnomod.ore.brownCoal.name=Brown Coal
+item.bunnomod.ore.brownCoal.desc=Like coal

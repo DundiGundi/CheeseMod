@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
-  "version": "${version}",
+  "id": "bunnomod",
+  "version": "0.1",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Bunno Mod",
+  "description": "This mod aims to add Cheese.",
   "authors": [
-    "Turnip Labs"
+    "DundiGundi"
   ],
   "contact": {
     "homepage": "",
@@ -19,20 +19,20 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+      		"dundigundi.bunnomod.BunnoMod"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+          "dundigundi.bunnomod.BunnoMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+          "dundigundi.bunnomod.BunnoMod"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"dundigundi.bunnomod.BunnoMod"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+		"bunnomod.mixins.json"
   ],
 
   "depends": {

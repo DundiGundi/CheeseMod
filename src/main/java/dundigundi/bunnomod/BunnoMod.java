@@ -23,6 +23,7 @@ public class BunnoMod implements ModInitializer, GameStartEntrypoint, RecipeEntr
 	//profit
 	//cheese item, eatable block cheese like cake(craftable from 9 cheese slice), cheese making block
 	//torch that signals the way (right click to change mode -> emits white particles, like one of the mods from 1.18 idk the name)
+	//aztapicsa!?
 
 	@Override
 	public void onInitialize() {

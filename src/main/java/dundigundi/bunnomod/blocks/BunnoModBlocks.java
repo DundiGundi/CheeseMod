@@ -1,7 +1,6 @@
 package dundigundi.bunnomod.blocks;
 
 import dundigundi.bunnomod.BunnoMod;
-import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
@@ -10,13 +9,16 @@ import net.minecraft.core.item.tool.ItemToolPickaxe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.util.GameStartEntrypoint;
+import dundigundi.bunnomod.BunnoModConfig;
 
 
 public class BunnoModBlocks {
 	public static final String MOD_ID = BunnoMod.MOD_ID;
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	private int nextBlockID(String blockName) {
+		return BunnoModConfig.cfg.getInt("Block IDs." + blockName);
+	}
 
 	//Blocks
 	public static Block brownCoalStone;
@@ -26,11 +28,13 @@ public class BunnoModBlocks {
 
 	private void pickaxeLevels() {
 		ItemToolPickaxe.miningLevels.put(brownCoalStone, 1);
+		ItemToolPickaxe.miningLevels.put(brownCoalBasalt, 1);
+		ItemToolPickaxe.miningLevels.put(brownCoalLimestone, 1);
+		ItemToolPickaxe.miningLevels.put(brownCoalGranite, 1);
 	}
 
 
 	public void initializeBlocks() {
-		int startingBlockId = 2000;
 
 		BlockBuilder oreBuilder = new BlockBuilder(MOD_ID)
 				.setBlockSound(BlockSounds.STONE)
@@ -40,16 +44,16 @@ public class BunnoModBlocks {
 
 		brownCoalStone = oreBuilder
 				.setTextures("brownCoal_stone.png")
-				.build(new BlockBrownCoal("brownCoal.stone", startingBlockId++, Material.stone));
+				.build(new BlockBrownCoal("brownCoal.stone", nextBlockID("brownCoalStone"), Material.stone));
 		brownCoalBasalt = oreBuilder
 				.setTextures("brownCoal_basalt.png")
-				.build(new BlockBrownCoal("brownCoal.basalt", startingBlockId++, Material.stone));
+				.build(new BlockBrownCoal("brownCoal.basalt", nextBlockID("brownCoalBasalt"), Material.stone));
 		brownCoalLimestone = oreBuilder
 				.setTextures("brownCoal_limestone.png")
-				.build(new BlockBrownCoal("brownCoal.limestone", startingBlockId++, Material.stone));
+				.build(new BlockBrownCoal("brownCoal.limestone", nextBlockID("brownCoalLimestone"), Material.stone));
 		brownCoalGranite = oreBuilder
 				.setTextures("brownCoal_granite.png")
-				.build(new BlockBrownCoal("brownCoal.granite", startingBlockId++, Material.stone));
+				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
 
 		pickaxeLevels();
 	}

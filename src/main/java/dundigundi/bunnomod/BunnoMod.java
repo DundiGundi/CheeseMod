@@ -45,6 +45,6 @@ public class BunnoMod implements ModInitializer, GameStartEntrypoint, RecipeEntr
 				.addInput('B', BunnoModItems.brownCoal)
 				.addInput('S', Item.stick)
 				.create("torchBrownCoal", Block.torchCoal.getDefaultStack());
-		LookupFuelFurnace.instance.addFuelEntry(BunnoModItems.brownCoal.id, 1600);
+		LookupFuelFurnace.instance.addFuelEntry(BunnoModItems.brownCoal.id, 800);
 	}
 }

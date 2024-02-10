@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "bunnomod",
-  "version": "0.1",
+  "version": "${version}",
 
   "name": "Bunno Mod",
   "description": "This mod aims to add Cheese.",
@@ -29,6 +29,9 @@
 		],
 		"recipesReady": [
 			"dundigundi.bunnomod.BunnoMod"
+		],
+		"terrain-api": [
+			"dundigundi.bunnomod.compat.terrainapi.TerrainAPIPlugin"
 		]
 	},
   "mixins": [
@@ -36,7 +39,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+    "fabricloader": ">=0.13.3",
+		"halplibe": ">=3.1.0",
+		"terrain-api": ">=1.4.0-7.1"
   },
   "suggests": {
   }

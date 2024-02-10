@@ -42,9 +42,9 @@ public class BunnoMod implements ModInitializer, GameStartEntrypoint, RecipeEntr
 	@Override
 	public void onRecipesReady() {
 		RecipeBuilder.Shaped(MOD_ID, "B", "S")
-				.addInput('B', BunnoModItems.oreBrownCoal)
+				.addInput('B', BunnoModItems.brownCoal)
 				.addInput('S', Item.stick)
 				.create("torchBrownCoal", Block.torchCoal.getDefaultStack());
-		LookupFuelFurnace.instance.addFuelEntry(BunnoModItems.oreBrownCoal.id, 1600);
+		LookupFuelFurnace.instance.addFuelEntry(BunnoModItems.brownCoal.id, 1600);
 	}
 }

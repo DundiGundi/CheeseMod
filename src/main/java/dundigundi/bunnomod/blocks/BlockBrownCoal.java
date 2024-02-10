@@ -9,8 +9,8 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
-public class BlockOreBrownCoal extends Block {
-	public BlockOreBrownCoal(String key, int id, Material material) {
+public class BlockBrownCoal extends Block {
+	public BlockBrownCoal(String key, int id, Material material) {
 		super(key, id, material);
 	}
 
@@ -21,7 +21,7 @@ public class BlockOreBrownCoal extends Block {
 			case PICK_BLOCK:
 				return new ItemStack[]{new ItemStack(this)};
 			case PROPER_TOOL:
-				return new ItemStack[]{new ItemStack(BunnoModItems.oreBrownCoal, 1)};
+				return new ItemStack[]{new ItemStack(BunnoModItems.brownCoal, 1)};
 			default:
 				return null;
 		}

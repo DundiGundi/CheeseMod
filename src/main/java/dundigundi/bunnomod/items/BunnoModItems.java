@@ -13,11 +13,11 @@ public class BunnoModItems {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	//Ore
-	public static Item oreBrownCoal;
+	public static Item brownCoal;
 
 	public void initializeItems() {
 		int startingItemId = 16600;
 
-		oreBrownCoal = ItemHelper.createItem(MOD_ID, new Item(startingItemId++), "brownCoal", "brownCoal.png");
+		brownCoal = ItemHelper.createItem(MOD_ID, new Item(startingItemId++), "brownCoal", "brownCoal.png");
 	}
 }

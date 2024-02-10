@@ -36,8 +36,8 @@ public class BunnoModBlocks {
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
 		oreBrownCoalStone = oreBuilder
-				.setTextures("oreBrownCoalStone.png")
-				.build(new BlockOreBrownCoal("ore.brownCoal.stone", startingBlockId++, Material.stone));
+				.setTextures("brownCoalStone.png")
+				.build(new BlockOreBrownCoal("brownCoal.stone", startingBlockId++, Material.stone));
 
 		pickaxeLevels();
 	}

@@ -1,8 +1,12 @@
 package dundigundi.bunnomod.blocks;
 
 import dundigundi.bunnomod.BunnoMod;
+import net.minecraft.client.render.block.model.BlockModel;
+import net.minecraft.client.render.block.model.BlockModelDispatcher;
+import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockCake;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -20,11 +24,14 @@ public class BunnoModBlocks {
 		return BunnoModConfig.cfg.getInt("Block IDs." + blockName);
 	}
 
-	//Blocks
+	//Ores
 	public static Block brownCoalStone;
 	public static Block brownCoalBasalt;
 	public static Block brownCoalLimestone;
 	public static Block brownCoalGranite;
+
+	//Food
+	public static Block blockOfCheese;
 
 	private void pickaxeLevels() {
 		ItemToolPickaxe.miningLevels.put(brownCoalStone, 1);
@@ -42,6 +49,11 @@ public class BunnoModBlocks {
 				.setHardness(3f)
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+		BlockBuilder cheeseBuilder = new BlockBuilder(MOD_ID)
+				.setTopBottomTexture("blockOfCheeseTopBottom.png")
+				.setSideTextures("blockOfCheeseSide.png")
+				.setBlockSound(BlockSounds.DEFAULT);
+
 		brownCoalStone = oreBuilder
 				.setTextures("brownCoal_stone.png")
 				.build(new BlockBrownCoal("brownCoal.stone", nextBlockID("brownCoalStone"), Material.stone));
@@ -54,6 +66,8 @@ public class BunnoModBlocks {
 		brownCoalGranite = oreBuilder
 				.setTextures("brownCoal_granite.png")
 				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
+		blockOfCheese= cheeseBuilder
+				.build(new BlockCake("blockOfCheese", nextBlockID("blockOfCheese")).withTexCoords(9, 7, 12, 7, 10, 7).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS));
 
 		pickaxeLevels();
 	}

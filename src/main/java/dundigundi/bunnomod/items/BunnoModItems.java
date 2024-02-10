@@ -4,6 +4,8 @@ package dundigundi.bunnomod.items;
 import dundigundi.bunnomod.BunnoMod;
 import dundigundi.bunnomod.BunnoModConfig;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemFood;
+import net.minecraft.core.item.ItemFoodStackable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ItemHelper;
@@ -17,11 +19,14 @@ public class BunnoModItems {
 		return BunnoModConfig.cfg.getInt("Item IDs." + itemName);
 	}
 
-	//Ore
+	//Coal
 	public static Item brownCoal;
+	//Food
+	public static Item cheeseSlice;
 
 	public void initializeItems() {
 
 		brownCoal = ItemHelper.createItem(MOD_ID, new Item(nextItemID("brownCoal")), "brownCoal", "brownCoal.png");
+		cheeseSlice = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("cheeseSlice",nextItemID("cheeseSlice"), 1, false, 4), "cheeseSlice", "cheeseSlice.png");
 	}
 }

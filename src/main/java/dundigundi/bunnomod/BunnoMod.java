@@ -17,7 +17,6 @@ public class BunnoMod implements ModInitializer, GameStartEntrypoint, RecipeEntr
 	public static Logger logger = LoggerFactory.getLogger(MOD_ID);
 
 	//to complete
-	//make world generation happen
 	//?
 	//profit
 	//cheese item, eatable block cheese like cake(craftable from 9 cheese slice), cheese making block

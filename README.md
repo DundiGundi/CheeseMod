@@ -1,37 +1,14 @@
-# Example Mod
+# Bunno Mod
 
-Template for making Babric mods for BTA!
+"Template for making Babric mods for BTA!"
 
-**Note: *DO NOT fork this repository unless you want to contribute!***
 
-## Prerequisites
-- JDK for Java 17 ([Eclipse Temurin](https://adoptium.net/temurin/releases/) recommended)
-- [Intellij IDEA](https://www.jetbrains.com/idea/download/) (Scroll down for the free community edition)
-- Minecraft Development plugin (Optional, but highly recommended)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis faucibus varius. Nam neque tortor, scelerisque at odio non, pulvinar bibendum velit. Sed sed elit urna. Aenean eleifend ullamcorper lorem, eu tincidunt massa luctus eget. Nunc porttitor laoreet nisl, eget feugiat tellus mollis sit amet. Duis maximus a sapien nec feugiat. Aenean eu erat nibh. In eu euismod justo. Aliquam vulputate ante eget porttitor varius. In sed est condimentum, pretium velit non, tincidunt nunc.
 
-## Setup instructions
-   
+Fusce nunc turpis, pulvinar ac luctus pellentesque, mattis vel metus. Cras lacinia nisl nibh, a ullamcorper lectus imperdiet scelerisque. Duis quis diam rutrum, laoreet elit vitae, facilisis felis. Maecenas quis gravida augue, nec accumsan nunc. Nullam eu semper neque, vel laoreet quam. Suspendisse interdum ligula ut eros ornare, in semper mi hendrerit. Proin congue turpis quis ligula mattis pharetra.
 
-1. Click the `Use this template` button on this repo's page above. Choose `Create a new repository`, you will be redirected to a new page. Enter your repo's name and description, and hit `Create repository`.  
-   To get your project, open IntelliJ IDEA and click `Get from VCS`. Select `Repository URL` and enter your repo's url
+Nulla iaculis accumsan mauris, nec condimentum elit euismod tristique. Maecenas hendrerit tincidunt metus, nec faucibus mi molestie at. Nulla faucibus velit blandit nisl interdum fermentum. Vivamus lacinia euismod tristique. Cras congue ligula id urna mattis tincidunt. Mauris sed lacinia libero. Ut id sapien id sapien tristique maximus. Morbi non velit dui.
 
-2. After the project has finished importing, close it and open it again.  
-   If that does not work, open the right sidebar with `Gradle` on it, open `Tasks` > `fabric` and run `ideaSyncTask`.
+Proin sit amet eros arcu. Praesent condimentum in lorem a varius. Donec eros lorem, luctus ut facilisis id, dignissim eu dolor. Suspendisse ut sem consectetur, commodo quam et, auctor tellus. Pellentesque vestibulum lectus sit amet ligula placerat, eu maximus neque consequat. Integer mauris metus, fermentum vel interdum in, porta at mi. Mauris auctor mollis ipsum, quis venenatis nisi commodo nec. Fusce condimentum consectetur aliquet. Duis eget pellentesque mauris. Sed et odio tellus. Morbi consequat fermentum viverra. Fusce varius gravida felis id cursus. In facilisis finibus quam, ac aliquam urna congue sit amet.
 
-3. Create a new run configuration by going in `Run > Edit Configurations`.  
-   Then click on the plus icon and select Gradle. In the `Tasks and Arguments` field enter `build`.  
-   Running it will build your finished jar files and put them in `build/libs/`.
-
-4. Lastly, open `File` > `Settings` and head to `Build, Execution, Development` > `Build Tools` > `Gradle`.  
-   Make sure `Build and run using` and `Run tests using` is set to `Gradle`.
-
-5. Done! Now, all that's left is to change every mention of `examplemod` and `turniplabs` to your own mod id and mod group, respectively. Happy modding!
-
-## Tips
-
-1. If you haven't already you should join the BTA modding discord! https://discord.gg/FTUNJhswBT
-2. You can set your username when launching the client run configuration by setting `--username <username>` in your program arguments.
-3. When launching the server run configuration you may want to remove the `nogui` program argument in order to see the regular server GUI.
-4. In Intellij you can double press shift or press ctrl+N to search class files, change the search from the default `Project Files` to `All Places` you can easily explore the classes for you dependencies and even BTA itself.
-5. In Intellij if ctrl+left click on a field or method you can quickly get information on when and where that field or method is assign or used.
-
+Mauris augue nulla, accumsan eget mattis sit amet, fermentum id mi. Pellentesque sodales ex nec ante feugiat ullamcorper vitae non nisi. In non nisi non nulla feugiat tempor eu quis sapien. Nulla leo augue, pellentesque quis dignissim non, laoreet facilisis est. Etiam dapibus aliquam pellentesque. Praesent ut ex malesuada ligula vulputate elementum sit amet sit amet massa. Proin et risus lacinia, laoreet sapien ac, consectetur erat. Donec dignissim lacus sem, vitae dignissim mauris auctor nec. Integer ullamcorper nunc justo, quis iaculis ipsum luctus eget.

@@ -24,7 +24,7 @@ public class OverworldInitialization extends BaseInitialization {
 
 	@Override
 	protected void initOre() {
-		ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(MOD_ID, BunnoModBlocks.oreBrownCoalStone, 16, 25, 1, false);
+		ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(MOD_ID, BunnoModBlocks.brownCoalStone, 16, 20, 1, true);
 	}
 
 	@Override

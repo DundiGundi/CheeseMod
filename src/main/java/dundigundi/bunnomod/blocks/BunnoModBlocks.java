@@ -19,10 +19,13 @@ public class BunnoModBlocks {
 
 
 	//Blocks
-	public static Block oreBrownCoalStone;
+	public static Block brownCoalStone;
+	public static Block brownCoalBasalt;
+	public static Block brownCoalLimestone;
+	public static Block brownCoalGranite;
 
 	private void pickaxeLevels() {
-		ItemToolPickaxe.miningLevels.put(oreBrownCoalStone, 1);
+		ItemToolPickaxe.miningLevels.put(brownCoalStone, 1);
 	}
 
 
@@ -35,9 +38,18 @@ public class BunnoModBlocks {
 				.setHardness(3f)
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-		oreBrownCoalStone = oreBuilder
-				.setTextures("brownCoalStone.png")
-				.build(new BlockOreBrownCoal("brownCoal.stone", startingBlockId++, Material.stone));
+		brownCoalStone = oreBuilder
+				.setTextures("brownCoal_stone.png")
+				.build(new BlockBrownCoal("brownCoal.stone", startingBlockId++, Material.stone));
+		brownCoalBasalt = oreBuilder
+				.setTextures("brownCoal_basalt.png")
+				.build(new BlockBrownCoal("brownCoal.basalt", startingBlockId++, Material.stone));
+		brownCoalLimestone = oreBuilder
+				.setTextures("brownCoal_limestone.png")
+				.build(new BlockBrownCoal("brownCoal.limestone", startingBlockId++, Material.stone));
+		brownCoalGranite = oreBuilder
+				.setTextures("brownCoal_granite.png")
+				.build(new BlockBrownCoal("brownCoal.granite", startingBlockId++, Material.stone));
 
 		pickaxeLevels();
 	}

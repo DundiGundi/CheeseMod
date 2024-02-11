@@ -51,8 +51,7 @@ public class BunnoModBlocks {
 
 		BlockBuilder cheeseBuilder = new BlockBuilder(MOD_ID)
 				.setTopBottomTexture("blockOfCheeseTopBottom.png")
-				.setSideTextures("blockOfCheeseSide.png")
-				.setBlockSound(BlockSounds.DEFAULT);
+				.setSideTextures("blockOfCheeseSide.png");
 
 		brownCoalStone = oreBuilder
 				.setTextures("brownCoal_stone.png")
@@ -67,7 +66,7 @@ public class BunnoModBlocks {
 				.setTextures("brownCoal_granite.png")
 				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
 		blockOfCheese= cheeseBuilder
-				.build(new BlockCake("blockOfCheese", nextBlockID("blockOfCheese")).withTexCoords(9, 7, 12, 7, 10, 7).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS));
+				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese")).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS));
 
 		pickaxeLevels();
 	}

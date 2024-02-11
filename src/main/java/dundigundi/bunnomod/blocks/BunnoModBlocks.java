@@ -1,6 +1,7 @@
 package dundigundi.bunnomod.blocks;
 
 import dundigundi.bunnomod.BunnoMod;
+import dundigundi.bunnomod.BunnoModTags;
 import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
@@ -66,7 +67,7 @@ public class BunnoModBlocks {
 				.setTextures("brownCoal_granite.png")
 				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
 		blockOfCheese= cheeseBuilder
-				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese")).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS));
+				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese")).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS, BunnoModTags.CUTTABLE_BY_KNIFE));
 
 		pickaxeLevels();
 	}

@@ -29,15 +29,26 @@ public class BlockBlockofCheese extends BlockCake {
 		this.eatCakeSlice(world, x, y, z, player);
 	}
 	private void eatCakeSlice(World world, int i, int j, int k, EntityPlayer entityplayer) {
-		if (entityplayer.health < 20) {
-			entityplayer.heal(2);
-			//entityplayer.inventory.insertItem(new ItemStack(BunnoModItems.cheeseSlice),false);  player gets a slice of cheese
+		if (entityplayer.inventory.getCurrentItem().itemID == BunnoModItems.knife.id){
+			entityplayer.inventory.insertItem(new ItemStack(BunnoModItems.cheeseSlice),false);
+			entityplayer.inventory.getCurrentItem().damageItem(1, entityplayer);
 			int l = world.getBlockMetadata(i, j, k) + 1;
 			if (l >= 6) {
 				world.setBlockWithNotify(i, j, k, 0);
 			} else {
 				world.setBlockMetadataWithNotify(i, j, k, l);
 				world.markBlockDirty(i, j, k);
+			}
+		} else{
+			if (entityplayer.health < 20) {
+				entityplayer.heal(2);
+				int l = world.getBlockMetadata(i, j, k) + 1;
+				if (l >= 6) {
+					world.setBlockWithNotify(i, j, k, 0);
+				} else {
+					world.setBlockMetadataWithNotify(i, j, k, l);
+					world.markBlockDirty(i, j, k);
+				}
 			}
 		}
 

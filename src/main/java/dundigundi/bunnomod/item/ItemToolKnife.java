@@ -1,18 +1,10 @@
-package dundigundi.bunnomod.items;
+package dundigundi.bunnomod.item;
 
-import dundigundi.bunnomod.BunnoMod;
 import dundigundi.bunnomod.BunnoModTags;
-import dundigundi.bunnomod.blocks.BunnoModBlocks;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.material.Material;
-import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.data.tag.Tag;
+import dundigundi.bunnomod.block.BunnoModBlocks;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.enums.EnumBlockSoundEffectType;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tag.ItemTags;
 import net.minecraft.core.item.tool.ItemTool;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;

@@ -1,7 +1,7 @@
 package dundigundi.bunnomod;
 
-import dundigundi.bunnomod.blocks.BunnoModBlocks;
-import dundigundi.bunnomod.items.BunnoModItems;
+import dundigundi.bunnomod.block.BunnoModBlocks;
+import dundigundi.bunnomod.item.BunnoModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

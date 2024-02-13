@@ -1,7 +1,7 @@
-package dundigundi.bunnomod.blocks;
+package dundigundi.bunnomod.block;
 
 import dundigundi.bunnomod.BunnoMod;
-import dundigundi.bunnomod.items.BunnoModItems;
+import dundigundi.bunnomod.item.BunnoModItems;
 import net.minecraft.core.block.BlockCake;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;

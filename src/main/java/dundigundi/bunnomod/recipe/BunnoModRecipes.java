@@ -1,8 +1,8 @@
-package dundigundi.bunnomod.recipes;
+package dundigundi.bunnomod.recipe;
 
 import dundigundi.bunnomod.BunnoMod;
-import dundigundi.bunnomod.blocks.BunnoModBlocks;
-import dundigundi.bunnomod.items.BunnoModItems;
+import dundigundi.bunnomod.block.BunnoModBlocks;
+import dundigundi.bunnomod.item.BunnoModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.item.Item;

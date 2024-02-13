@@ -1,12 +1,9 @@
-package dundigundi.bunnomod.blocks;
+package dundigundi.bunnomod.block;
 
 import dundigundi.bunnomod.BunnoMod;
-import net.minecraft.client.render.block.model.BlockModel;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
-import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+import dundigundi.bunnomod.BunnoModTags;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockCake;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -24,11 +21,14 @@ public class BunnoModBlocks {
 		return BunnoModConfig.cfg.getInt("Block IDs." + blockName);
 	}
 
-	//Ores
+	//Coal
 	public static Block brownCoalStone;
 	public static Block brownCoalBasalt;
 	public static Block brownCoalLimestone;
 	public static Block brownCoalGranite;
+
+	//Sandlike
+	public static Block blockSalt;
 
 	//Food
 	public static Block blockOfCheese;
@@ -52,7 +52,14 @@ public class BunnoModBlocks {
 		BlockBuilder cheeseBuilder = new BlockBuilder(MOD_ID)
 				.setTopBottomTexture("blockOfCheeseTopBottom.png")
 				.setSideTextures("blockOfCheeseSide.png")
-				.setBlockSound(BlockSounds.DEFAULT);
+				.setResistance(0.5f)
+				.setHardness(0.5f);
+
+		BlockBuilder sandBuilder = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.SAND)
+				.setResistance(0.5f)
+				.setHardness(0.5f)
+				.setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH);
 
 		brownCoalStone = oreBuilder
 				.setTextures("brownCoal_stone.png")
@@ -67,7 +74,13 @@ public class BunnoModBlocks {
 				.setTextures("brownCoal_granite.png")
 				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
 		blockOfCheese= cheeseBuilder
-				.build(new BlockCake("blockOfCheese", nextBlockID("blockOfCheese")).withTexCoords(9, 7, 12, 7, 10, 7).withHardness(0.5F).withDisabledStats().withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.BROKEN_BY_FLUIDS));
+				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese"))
+						.withDisabledStats()
+						.withDisabledNeighborNotifyOnMetadataChange()
+						.withTags(BlockTags.BROKEN_BY_FLUIDS, BunnoModTags.CUTTABLE_BY_KNIFE));
+		blockSalt= sandBuilder
+				.setTextures("block_salt.png")
+				.build(new BlockSalt("block.salt", nextBlockID("blockSalt")));
 
 		pickaxeLevels();
 	}

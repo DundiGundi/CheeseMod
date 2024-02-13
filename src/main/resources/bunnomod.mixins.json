@@ -1,7 +1,7 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "dundigundi.bunnomod.mixins",
+    "package": "dundigundi.bunnomod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
 

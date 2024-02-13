@@ -28,7 +28,7 @@
           "dundigundi.bunnomod.BunnoMod"
 		],
 		"recipesReady": [
-			"dundigundi.bunnomod.BunnoMod"
+			"dundigundi.bunnomod.recipe.BunnoModRecipes"
 		],
 		"terrain-api": [
 			"dundigundi.bunnomod.compat.terrainapi.TerrainAPIPlugin"

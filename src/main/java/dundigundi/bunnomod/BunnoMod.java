@@ -14,11 +14,6 @@ public class BunnoMod implements ModInitializer, GameStartEntrypoint {
 	//to complete
 	//?
 	//profit
-	//new item: knife for special interactions with foods
-	//interactions:
-	//-knife + right click on block of cheese = gives you a slice of cheese (cheese block fixing needed)
-	//cheese making block -> one bucket of milk gives you a block of cheese
-	//torch that signals the way (right click to change mode -> emits white particles, like one of the mods from 1.18 idk the name)
 
 	@Override
 	public void onInitialize() {

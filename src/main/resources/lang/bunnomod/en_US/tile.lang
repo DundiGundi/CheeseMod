@@ -12,3 +12,6 @@ tile.bunnomod.blockOfCheese.desc=Finest cheese in a block form
 
 tile.bunnomod.block.salt.name=Salt Block
 tile.bunnomod.block.salt.desc=Must be salty
+
+tile.bunnomod.cheeseMaker.name=Cheese Maker
+tile.bunnomod.cheeseMaker.desc =It makes cheese. Trust me!

@@ -22,4 +22,5 @@ public class BunnoModRecipes implements RecipeEntrypoint {
 						.create("blockOfCheese", BunnoModBlocks.blockOfCheese.getDefaultStack());
 		LookupFuelFurnace.instance.addFuelEntry(BunnoModItems.brownCoal.id, 800);
 	}
+
 }

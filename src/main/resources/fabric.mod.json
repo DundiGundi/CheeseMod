@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "bunnomod",
+  "id": "cheesemod",
   "version": "${version}",
 
-  "name": "Bunno Mod",
+  "name": "Cheese Mod",
   "description": "This mod aims to add Cheese.",
   "authors": [
     "DundiGundi"
@@ -19,23 +19,23 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      		"dundigundi.bunnomod.BunnoMod"
+      		"dundigundi.cheesemod.CheeseMod"
     ],
 		"beforeGameStart": [
-          "dundigundi.bunnomod.BunnoMod"
+          "dundigundi.cheesemod.CheeseMod"
 		],
 		"afterGameStart": [
-          "dundigundi.bunnomod.BunnoMod"
+          "dundigundi.cheesemod.CheeseMod"
 		],
 		"recipesReady": [
-			"dundigundi.bunnomod.recipe.BunnoModRecipes"
+			"dundigundi.cheesemod.recipe.CheeseModRecipes"
 		],
 		"terrain-api": [
-			"dundigundi.bunnomod.compat.terrainapi.TerrainAPIPlugin"
+			"dundigundi.cheesemod.compat.terrainapi.TerrainAPIPlugin"
 		]
 	},
   "mixins": [
-		"bunnomod.mixins.json"
+		"cheesemod.mixins.json"
   ],
 
   "depends": {

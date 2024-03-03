@@ -97,11 +97,13 @@ public class BunnoModBlocks {
 				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese"))
 						.withDisabledStats()
 						.withDisabledNeighborNotifyOnMetadataChange()
-						.withTags(BlockTags.BROKEN_BY_FLUIDS, BunnoModTags.CUTTABLE_BY_KNIFE));
+						.withTags(BlockTags.BROKEN_BY_FLUIDS, BunnoModTags.CUTTABLE_BY_KNIFE, BlockTags.NOT_IN_CREATIVE_MENU));
 		blockSalt = sandBuilder
 				.setTextures("block_salt.png")
 				.build(new BlockSalt("block.salt", nextBlockID("blockSalt")));
 		cheeseMaker = machineBuilder
+				.setTextures("cheeseMakerSides.png")
+				.setTopTexture("cheeseMakerTop.png")
 				.build(new BlockCheeseMaker("cheeseMaker", nextBlockID("cheeseMaker"), Material.wood));
 		registerGUIs();
 		initializeTiles();

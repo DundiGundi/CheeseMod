@@ -7,6 +7,7 @@ import dundigundi.bunnomod.block.BunnoModBlocks;
 import dundigundi.bunnomod.recipe.RecipesCheeseMaker;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 
@@ -14,7 +15,9 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	private final RecipesCheeseMaker recipes = new RecipesCheeseMaker();
 	private boolean makingCheese = false;
 	public int currentCheeseMakerTime = 0;
-	public int maxCheeseMakerTime = 100;
+	public int maxCheeseMakerTime = 400;
+	public int currentMilkAmount = 0;
+	public int maxMilkAmount = 4;
 	protected ItemStack[] contents = new ItemStack[3];
 
 	public String getInvName() {
@@ -65,7 +68,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 
 	@Override
 	public int getInventoryStackLimit() {
-		return 1;
+		return 64;
 	}
 
 	@Override
@@ -83,6 +86,12 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 
 	@Override
 	public void onInventoryChanged() {
+		if (contents[0] != null){
+			if (contents[0].getItem() == Item.bucketMilk && currentMilkAmount < maxMilkAmount){
+				++currentMilkAmount;
+				contents[0] = new ItemStack(Item.bucket);
+			}
+		}
 		super.onInventoryChanged();
 	}
 
@@ -163,7 +172,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	}
 
 	private boolean canProduce() {
-		if (contents[1] != null && contents[1].getItem() != null) {
+		if (contents[1] != null && contents[1].getItem() != null && currentMilkAmount != 0) {
 			if (isProducible(contents[1])) {
 				ItemStack resultStack = recipes.getRecipeResult(contents[1].getItem().id);
 
@@ -185,6 +194,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 				contents[2].stackSize += itemStack.stackSize;
 
 			--contents[1].stackSize;
+			--currentMilkAmount;
 
 			if (contents[1].stackSize <= 0)
 				contents[1] = null;

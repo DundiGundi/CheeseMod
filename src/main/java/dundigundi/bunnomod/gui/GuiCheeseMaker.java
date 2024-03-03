@@ -35,8 +35,10 @@ public class GuiCheeseMaker extends GuiContainer {
 		int scrnY = (height - ySize) / 2;
 		drawTexturedModalRect(scrnX, scrnY, 0, 0, xSize, ySize);
 
-		int cheeseMakerTime =  tileEntity.maxCheeseMakerTime == 0 ? 0 : tileEntity.currentCheeseMakerTime * 12 / tileEntity.maxCheeseMakerTime;
-		drawTexturedModalRect(scrnX + 96, scrnY + 35, 177, 0, cheeseMakerTime, 16); //pos of the arrow that keeps growing with cheeseMakerTime
+		int cheeseMakerTime =  tileEntity.maxCheeseMakerTime == 0 ? 0 : tileEntity.currentCheeseMakerTime * 22 / tileEntity.maxCheeseMakerTime;
+		drawTexturedModalRect(scrnX + 96, scrnY + 35, 177, 0, cheeseMakerTime, 16);
+		int milkAmount = tileEntity.currentMilkAmount * 8;
+		drawTexturedModalRect(scrnX + 28, scrnY + 48 - milkAmount + 1, 177, 17, 16, milkAmount);
 	}
 
 	@Override

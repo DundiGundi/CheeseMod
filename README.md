@@ -1,6 +1,6 @@
 # Cheese Mod
 
-#Dependencies
+Dependencies:
 
 Halplibe 3.2.1
 Catalyst Core 1.1.1

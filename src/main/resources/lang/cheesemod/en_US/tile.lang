@@ -1,0 +1,17 @@
+tile.cheesemod.brownCoal.stone.name=Stone Brown Coal
+tile.cheesemod.brownCoal.stone.desc=Like normal coal, but brown
+tile.cheesemod.brownCoal.basalt.name=Basalt Brown Coal
+tile.cheesemod.brownCoal.basalt.desc=Like normal coal, but brown
+tile.cheesemod.brownCoal.limestone.name=Limestone Brown Coal
+tile.cheesemod.brownCoal.limestone.desc=Like normal coal, but brown
+tile.cheesemod.brownCoal.granite.name=Granite Brown Coal
+tile.cheesemod.brownCoal.granite.desc=Like normal coal, but brown
+
+tile.cheesemod.blockOfCheese.name=Block of Cheese
+tile.cheesemod.blockOfCheese.desc=Finest cheese in a block form
+
+tile.cheesemod.block.salt.name=Salt Block
+tile.cheesemod.block.salt.desc=Must be salty
+
+tile.cheesemod.cheeseMaker.name=Cheese Maker
+tile.cheesemod.cheeseMaker.desc =It makes cheese. Trust me!

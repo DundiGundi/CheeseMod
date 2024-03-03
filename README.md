@@ -1,7 +1,4 @@
-# Bunno Mod
-
-"Template for making Babric mods for BTA!"
-
+# Cheese Mod
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis faucibus varius. Nam neque tortor, scelerisque at odio non, pulvinar bibendum velit. Sed sed elit urna. Aenean eleifend ullamcorper lorem, eu tincidunt massa luctus eget. Nunc porttitor laoreet nisl, eget feugiat tellus mollis sit amet. Duis maximus a sapien nec feugiat. Aenean eu erat nibh. In eu euismod justo. Aliquam vulputate ante eget porttitor varius. In sed est condimentum, pretium velit non, tincidunt nunc.
 

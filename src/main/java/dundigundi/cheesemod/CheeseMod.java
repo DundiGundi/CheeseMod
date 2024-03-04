@@ -15,13 +15,16 @@ public class CheeseMod implements ModInitializer, GameStartEntrypoint {
 	to complete
 	?
 	profit
-	complete salt overhaul: salt blocks spawn in desert like a small lake and in ore forms (reuse brown coal)
-	more cheese ingredients:
-		rennet(recipe, that uses the knife and the stomach of the cow that drops from killing a cow)
-		starting culture(you need to cut grass or something plant-based to have a chance acquiring it)
-		milk(obvious)
-		salt(already completed)
-		later herbs for other cheese types(can buff the player(???))
+	content:
+		complete salt overhaul: salt blocks spawn in desert like a small lake and in ore forms (reuse brown coal)
+		more cheese ingredients:
+			rennet(recipe, that uses the knife and the stomach of the cow that drops from killing a cow)
+			starting culture(you need to cut grass or something plant-based to have a chance acquiring it)
+			milk(obvious)
+			salt(already completed)
+			later herbs for other cheese types(can buff the player(???))
+	bugfix:
+		fixing inventory containers in cheesemaker (first hotbar not reacting with shift + lb)
 	*/
 
 	@Override

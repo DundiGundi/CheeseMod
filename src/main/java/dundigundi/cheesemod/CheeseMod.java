@@ -16,6 +16,7 @@ public class CheeseMod implements ModInitializer, GameStartEntrypoint {
 	?
 	profit
 	content:
+		adding/removing required recipes
 		complete salt overhaul: salt blocks spawn in desert like a small lake and in ore forms (reuse brown coal)
 		more cheese ingredients:
 			rennet(recipe, that uses the knife and the stomach of the cow that drops from killing a cow)

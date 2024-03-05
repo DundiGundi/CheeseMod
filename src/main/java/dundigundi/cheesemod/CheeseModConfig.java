@@ -22,7 +22,7 @@ public class CheeseModConfig {
 				.addEntry("cfgVersion", 5);
 
 		properties.addCategory("World Gen")
-				.addEntry("brownCoal", true);
+				.addEntry("oreSalt", true);
 
 		properties.addCategory("Block IDs");
 		properties.addEntry("Block IDs.startingID", 2000);

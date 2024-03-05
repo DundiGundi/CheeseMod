@@ -27,13 +27,11 @@ public class CheeseModBlocks {
 		return CheeseModConfig.cfg.getInt("Block IDs." + blockName);
 	}
 
-	//Coal
-	public static Block brownCoalStone;
-	public static Block brownCoalBasalt;
-	public static Block brownCoalLimestone;
-	public static Block brownCoalGranite;
-
-	//Sandlike
+	//salt
+	public static Block oreSaltStone;
+	public static Block oreSaltBasalt;
+	public static Block oreSaltLimestone;
+	public static Block oreSaltGranite;
 	public static Block blockSalt;
 
 	//Food
@@ -43,10 +41,10 @@ public class CheeseModBlocks {
 	public static Block cheeseMaker;
 
 	private void pickaxeLevels() {
-		ItemToolPickaxe.miningLevels.put(brownCoalStone, 1);
-		ItemToolPickaxe.miningLevels.put(brownCoalBasalt, 1);
-		ItemToolPickaxe.miningLevels.put(brownCoalLimestone, 1);
-		ItemToolPickaxe.miningLevels.put(brownCoalGranite, 1);
+		ItemToolPickaxe.miningLevels.put(oreSaltStone, 1);
+		ItemToolPickaxe.miningLevels.put(oreSaltBasalt, 1);
+		ItemToolPickaxe.miningLevels.put(oreSaltLimestone, 1);
+		ItemToolPickaxe.miningLevels.put(oreSaltGranite, 1);
 	}
 	private void registerGUIs() {
 		Catalyst.GUIS.register("CheeseMaker", new MpGuiEntry(TileEntityCheeseMaker.class, GuiCheeseMaker.class, ContainerCheeseMaker.class));
@@ -81,30 +79,32 @@ public class CheeseModBlocks {
 				.setHardness(2.5f)
 				.setTags(BlockTags.MINEABLE_BY_AXE);
 
-		brownCoalStone = oreBuilder
-				.setTextures("brownCoal_stone.png")
-				.build(new BlockBrownCoal("brownCoal.stone", nextBlockID("brownCoalStone"), Material.stone));
-		brownCoalBasalt = oreBuilder
-				.setTextures("brownCoal_basalt.png")
-				.build(new BlockBrownCoal("brownCoal.basalt", nextBlockID("brownCoalBasalt"), Material.stone));
-		brownCoalLimestone = oreBuilder
-				.setTextures("brownCoal_limestone.png")
-				.build(new BlockBrownCoal("brownCoal.limestone", nextBlockID("brownCoalLimestone"), Material.stone));
-		brownCoalGranite = oreBuilder
-				.setTextures("brownCoal_granite.png")
-				.build(new BlockBrownCoal("brownCoal.granite", nextBlockID("brownCoalGranite"), Material.stone));
+		oreSaltStone = oreBuilder
+				.setTextures("oreSalt_stone.png")
+				.build(new BlockOreSalt("ore.salt.stone", nextBlockID("oreSaltStone"), Material.stone));
+		oreSaltBasalt = oreBuilder
+				.setTextures("oreSalt_basalt.png")
+				.build(new BlockOreSalt("ore.salt.basalt", nextBlockID("oreSaltBasalt"), Material.stone));
+		oreSaltLimestone = oreBuilder
+				.setTextures("oreSalt_limestone.png")
+				.build(new BlockOreSalt("ore.salt.limestone", nextBlockID("oreSaltLimestone"), Material.stone));
+		oreSaltGranite = oreBuilder
+				.setTextures("oreSalt_granite.png")
+				.build(new BlockOreSalt("ore.salt.granite", nextBlockID("oreSaltGranite"), Material.stone));
+		blockSalt = sandBuilder
+				.setTextures("block_salt.png")
+				.build(new BlockSalt("block.salt", nextBlockID("blockSalt")));
+
 		blockOfCheese = cheeseBuilder
 				.build(new BlockBlockofCheese("blockOfCheese", nextBlockID("blockOfCheese"))
 						.withDisabledStats()
 						.withDisabledNeighborNotifyOnMetadataChange()
 						.withTags(BlockTags.BROKEN_BY_FLUIDS, CheeseModTags.CUTTABLE_BY_KNIFE, BlockTags.NOT_IN_CREATIVE_MENU));
-		blockSalt = sandBuilder
-				.setTextures("block_salt.png")
-				.build(new BlockSalt("block.salt", nextBlockID("blockSalt")));
 		cheeseMaker = machineBuilder
 				.setTextures("cheeseMakerSides.png")
 				.setTopTexture("cheeseMakerTop.png")
 				.build(new BlockCheeseMaker("cheeseMaker", nextBlockID("cheeseMaker"), Material.wood));
+
 		registerGUIs();
 		initializeTiles();
 		pickaxeLevels();

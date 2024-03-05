@@ -13,14 +13,7 @@ public class CheeseModRecipes implements RecipeEntrypoint {
 	public static String MOD_ID = CheeseMod.MOD_ID;
 	@Override
 	public void onRecipesReady() {
-		RecipeBuilder.Shaped(MOD_ID, "B", "S")
-				.addInput('B', CheeseModItems.brownCoal)
-				.addInput('S', Item.stick)
-				.create("torchBrownCoal", Block.torchCoal.getDefaultStack());
-		RecipeBuilder.Shaped(MOD_ID, "CCC", "CCC", "CCC")
-						.addInput('C', CheeseModItems.cheeseSlice)
-						.create("blockOfCheese", CheeseModBlocks.blockOfCheese.getDefaultStack());
-		LookupFuelFurnace.instance.addFuelEntry(CheeseModItems.brownCoal.id, 800);
+		//LookupFuelFurnace.instance.addFuelEntry(CheeseModItems.brownCoal.id, 800); igy kell fuelt hozzáadni :)
 	}
 
 }

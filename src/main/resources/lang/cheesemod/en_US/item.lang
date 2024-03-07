@@ -1,6 +1,3 @@
-item.cheesemod.brownCoal.name=Brown Coal
-item.cheesemod.brownCoal.desc=Least efficient coal-type
-
 item.cheesemod.cheeseSlice.name=A slice of cheese
 item.cheesemod.cheeseSlice.desc=Finest cheese
 
@@ -12,3 +9,10 @@ item.cheesemod.salt.desc=Don't be salty!
 
 item.cheesemod.cheeseBlock.name=Cheese Block
 item.cheesemod.cheeseBlock.desc=Block of Cheese now as an item!
+
+item.cheesemod.rennet.name=Rennet
+item.cheesemod.rennet.desc=An important ingredient for making cheese
+
+item.cheesemod.cowStomach.name=Cow Stomach
+item.cheesemod.cowStomach.desc=The Stomach of a cow
+

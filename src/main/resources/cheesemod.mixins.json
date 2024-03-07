@@ -4,6 +4,7 @@
     "package": "dundigundi.cheesemod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
+      "CowMixin"
     ],
     "client": [
     ],

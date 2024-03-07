@@ -20,7 +20,7 @@ public class BlockSalt extends BlockSand {
 			case PICK_BLOCK:
 				return new ItemStack[]{new ItemStack(this)};
 			default:
-				return new ItemStack[]{new ItemStack(CheeseModItems.salt, 3)};
+				return new ItemStack[]{new ItemStack(CheeseModItems.salt, 4)};
 		}
 	}
 }

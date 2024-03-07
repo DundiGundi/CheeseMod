@@ -15,14 +15,14 @@ import java.util.stream.Collectors;
 
 public class CheeseModConfig {
 	public static ConfigUpdater updater = ConfigUpdater.fromProperties();
-	private static final Toml properties = new Toml("BunnoMod's TOML Config");
+	private static final Toml properties = new Toml("CheeseMod's TOML Config");
 	public static TomlConfigHandler cfg;
 	static {
-		properties.addCategory("BunnoMod")
+		properties.addCategory("CheeseMod")
 				.addEntry("cfgVersion", 5);
 
 		properties.addCategory("World Gen")
-				.addEntry("brownCoal", true);
+				.addEntry("oreSalt", true);
 
 		properties.addCategory("Block IDs");
 		properties.addEntry("Block IDs.startingID", 2000);

@@ -11,7 +11,7 @@ import net.minecraft.core.item.tool.ItemTool;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class ItemToolKnife extends ItemTool, ItemBucket {
+public class ItemToolKnife extends ItemTool {
 	public ItemToolKnife(String name, int id, int damageDealt, ToolMaterial toolMaterial) {
 		super(name, id, damageDealt, toolMaterial, CheeseModTags.CUTTABLE_BY_KNIFE);
 		this.maxStackSize = 1;

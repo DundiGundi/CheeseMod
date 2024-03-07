@@ -25,11 +25,15 @@ public class CheeseModItems {
 	public static Item salt;
 	public static Item knife;
 	public static Item cheeseBlock;
+	public static Item rennet;
+	public static Item cowStomach;
 
 	public void initializeItems() {
 		cheeseSlice = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("cheeseSlice",nextItemID("cheeseSlice"), 1, false, 4), "cheeseSlice.png");
 		knife = ItemHelper.createItem(MOD_ID, new ItemToolKnife("knife", nextItemID("knife"), 2, ToolMaterial.wood), "knife.png");
 		salt = ItemHelper.createItem(MOD_ID, new Item("salt",nextItemID( "salt")), "salt.png");
 		cheeseBlock = ItemHelper.createItem(MOD_ID, new ItemPlaceable("cheeseBlock", nextItemID("cheeseBlock"), CheeseModBlocks.blockOfCheese).setMaxStackSize(1), "cheeseBlock.png");
+		cowStomach = ItemHelper.createItem(MOD_ID, new Item("cowStomach", nextItemID("cowStomach")), "cowStomach.png");
+		rennet = ItemHelper. createItem(MOD_ID, new Item("rennet", nextItemID("rennet")),"rennet.png");
 	}
 }

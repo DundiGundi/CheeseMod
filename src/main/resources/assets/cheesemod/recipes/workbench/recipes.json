@@ -1,0 +1,35 @@
+[
+  {
+    "name": "cheesemod:workbench/rennet",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "item.cheesemod.knife",
+          "amount": 1,
+          "meta": -1
+        }
+      },
+      {
+        "stack": {
+          "key": "item.cheesemod.cowStomach",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "tile.glass",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.cheesemod.rennet",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  }
+]

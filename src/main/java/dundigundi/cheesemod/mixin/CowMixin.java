@@ -24,10 +24,10 @@ public class CowMixin  extends EntityAnimal {
 	}
 
 	@Inject(method = "dropFewItems", at = @At("HEAD"))
-	public void dropRennet(CallbackInfo ci){
+	public void dropStomach(CallbackInfo ci){
 		int i = random.nextInt(3);
 		if (i == 0){
-			spawnAtLocation(CheeseModItems.salt.id, 1);
+			spawnAtLocation(CheeseModItems.cowStomach.id, 1);
 		}
 	}
 

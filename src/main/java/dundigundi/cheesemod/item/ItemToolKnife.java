@@ -15,7 +15,7 @@ public class ItemToolKnife extends ItemTool {
 	public ItemToolKnife(String name, int id, int damageDealt, ToolMaterial toolMaterial) {
 		super(name, id, damageDealt, toolMaterial, CheeseModTags.CUTTABLE_BY_KNIFE);
 		this.maxStackSize = 1;
-		this.setMaxDamage(toolMaterial.getDurability());
+		this.setMaxDamage(toolMaterial.getDurability() - 1);
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {

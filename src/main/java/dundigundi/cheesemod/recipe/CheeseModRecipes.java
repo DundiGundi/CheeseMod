@@ -23,7 +23,7 @@ public class CheeseModRecipes implements RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 		Registries.ITEM_GROUPS.register("cheesemod:knife", Registries.stackListOf());
-		for (int i = 0; i < CheeseModItems.knife.getMaxDamage(); i++) {
+		for (int i = 0; i < CheeseModItems.knife.getMaxDamage() + 1; i++) {
 			ItemStack j = CheeseModItems.knife.getDefaultStack();
 			j.setMetadata(i);
 			Registries.ITEM_GROUPS.getItem("cheesemod:knife").add(j);

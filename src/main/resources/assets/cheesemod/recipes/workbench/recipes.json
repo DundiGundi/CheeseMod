@@ -4,11 +4,7 @@
     "type": "minecraft:crafting/shapeless",
     "inputs": [
       {
-        "stack": {
-          "key": "item.cheesemod.knife",
-          "amount": 1,
-          "meta": 0
-        }
+        "group": "cheesemod:knife"
       },
       {
         "stack": {

@@ -3,6 +3,7 @@ package dundigundi.cheesemod.recipe;
 import dundigundi.cheesemod.CheeseMod;
 import dundigundi.cheesemod.block.CheeseModBlocks;
 import dundigundi.cheesemod.item.CheeseModItems;
+import dundigundi.cheesemod.item.ItemToolKnife;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.DataLoader;
@@ -21,6 +22,12 @@ public class CheeseModRecipes implements RecipeEntrypoint {
 	public static final RecipeGroup<RecipeEntryCrafting<?, ?>> WORKBENCH = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.workbench)));
 	@Override
 	public void onRecipesReady() {
+		Registries.ITEM_GROUPS.register("cheesemod:knife", Registries.stackListOf());
+		for (int i = 0; i < CheeseModItems.knife.getMaxDamage(); i++) {
+			ItemStack j = CheeseModItems.knife.getDefaultStack();
+			j.setMetadata(i);
+			Registries.ITEM_GROUPS.getItem("cheesemod:knife").add(j);
+		}
 		CHEESEMOD.register("workbench", WORKBENCH );
 		Registries.RECIPES.register("cheesemod", CHEESEMOD);
 		DataLoader.loadRecipes("/assets/cheesemod/recipes/workbench/recipes.json");

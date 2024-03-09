@@ -20,8 +20,10 @@ public class ContainerCheeseMaker extends Container {
 		this.inventory = inventory;
 		this.tileEntity = tileEntity;
 		addSlot(new Slot(tileEntity, 0, 28, 55)); //milk bucket slot
-		addSlot(new Slot(tileEntity, 1, 72, 35)); //salt slot
-		addSlot(new Slot(tileEntity, 2, 128, 35)); // produced good slot
+		addSlot(new Slot(tileEntity, 1, 72, 15)); //rennet slot
+		addSlot(new Slot(tileEntity, 2, 72, 35)); //salt slot
+		addSlot(new Slot(tileEntity, 3, 72, 55)); //bacterium slot
+		addSlot(new Slot(tileEntity, 4, 128, 35)); // produced good slot
 
 		for(int xSlot = 0; xSlot < 3; ++xSlot)
 			for (int ySlot = 0; ySlot < 9; ++ySlot)
@@ -33,29 +35,24 @@ public class ContainerCheeseMaker extends Container {
 
 	@Override
 	public List<Integer> getTargetSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
-		if (slot.id >= 3 && slot.id <= 39) {
-			if (action != InventoryAction.MOVE_ALL) {
-				if (target == 1) {
-					return this.getSlots(0, 1, false);
-				}
-
-				if (target == 2) {
-					return this.getSlots(1, 1, false);
-				}
-				if (slot.id >= 3 && slot.id <= 29) {
-					return this.getSlots(30, 9, false);
-				}
-
-				if (slot.id >= 31 && slot.id <= 38) {
-					return this.getSlots(3, 27, false);
-				}
+		if (slot.id >= 0 && slot.id <= 4) {
+			return this.getSlots(5, 36, false);
+		}
+		if (slot.id >= 5 && slot.id <= 40) {
+			if (target == 1) {
+				return this.getSlots(0, 4, false);
+			}
+			if (target == 2) {
+				return this.getSlots(4, 1, false);
+			}
+			if (slot.id >= 5 && slot.id <= 31) {
+				return this.getSlots(32, 9, false);
+			}
+			if (slot.id >= 32 && slot.id <= 40) {
+				return this.getSlots(5, 27, false);
 			}
 		}
-		if (slot.id >= 0 && slot.id <= 2) {
-			return slot.id == 2 ? this.getSlots(3, 36, true) : this.getSlots(3, 36, false);
-		} else {
-			return null;
-		}
+		return null;
 	}
 
 	@Override
@@ -70,22 +67,25 @@ public class ContainerCheeseMaker extends Container {
 	}
 
 	@Override
-	public List<Integer> getMoveSlots(InventoryAction inventoryAction, Slot slot, int i, EntityPlayer entityPlayer) {
+	public List<Integer> getMoveSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
 		if (slot.id >= 0 && slot.id <= 3) {
-			return this.getSlots(slot.id, 1, false);
-		} else {
-			if (inventoryAction == InventoryAction.MOVE_ALL) {
-				if (slot.id >= 3 && slot.id <= 30) {
-					return this.getSlots(3, 27, false);
-				}
-
-				if (slot.id >= 30 && slot.id <= 38) {
-					return this.getSlots(30, 9, false);
-				}
-			}
-
-			return slot.id >= 3 && slot.id <= 38 ? this.getSlots(3, 36, false) : null;
+			return this.getSlots(0, 4, false);
 		}
+		if (slot.id == 4) {
+			return this.getSlots(4, 1, false);
+		}
+		if (action == InventoryAction.MOVE_ALL) {
+			if (slot.id >= 5 && slot.id <= 31) {
+				return this.getSlots(5, 27, false);
+			}
+			if (slot.id >= 32 && slot.id <= 40) {
+				return this.getSlots(32, 9, false);
+			}
+		}
+		if (action == InventoryAction.MOVE_SIMILAR && slot.id >= 5 && slot.id <= 40) {
+			return this.getSlots(5, 36, false);
+		}
+		return null;
 	}
 
 	@Override

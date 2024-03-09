@@ -18,7 +18,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	public int maxCheeseMakerTime = 400;
 	public int currentMilkAmount = 0;
 	public int maxMilkAmount = 4;
-	protected ItemStack[] contents = new ItemStack[3];
+	protected ItemStack[] contents = new ItemStack[5];
 
 	public String getInvName() {
 		return "CheeseMaker";
@@ -105,7 +105,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 
 		if (worldObj.getBlockId(x, y, z) == CheeseModBlocks.cheeseMaker.id &&
 				currentCheeseMakerTime == 0 &&
-				contents[1] == null) {
+				contents[2] == null) {
 			BlockCheeseMaker.updateBlockState(true, worldObj, x, y, z);
 			cheeseMakerUpdated = true;
 		}
@@ -172,12 +172,12 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	}
 
 	private boolean canProduce() {
-		if (contents[1] != null && contents[1].getItem() != null && currentMilkAmount != 0) {
-			if (isProducible(contents[1])) {
-				ItemStack resultStack = recipes.getRecipeResult(contents[1].getItem().id);
+		if (contents[1] != null && contents[1].getItem() != null && contents[2] != null && contents[2].getItem() != null && contents[3] != null && contents[3].getItem() != null && currentMilkAmount != 0) {
+			if (isProducible(contents[2])) {
+				ItemStack resultStack = recipes.getRecipeResult(contents[2].getItem().id);
 
-				return contents[2] == null || contents[2].getItem() == resultStack.getItem() &&
-						contents[2].stackSize + resultStack.stackSize <= resultStack.getMaxStackSize();
+				return contents[4] == null || contents[4].getItem() == resultStack.getItem() &&
+						contents[4].stackSize + resultStack.stackSize <= resultStack.getMaxStackSize();
 			}
 		}
 		return false;
@@ -185,19 +185,25 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 
 	private void produceItem() {
 		if (canProduce()) {
-			ItemStack itemStack = recipes.getRecipeResult(contents[1].getItem().id);
+			ItemStack itemStack = recipes.getRecipeResult(contents[2].getItem().id);
 
-			if (contents[2] == null)
-				contents[2] = itemStack.copy();
+			if (contents[4] == null)
+				contents[4] = itemStack.copy();
 			else
-			if (contents[2].itemID == itemStack.itemID)
-				contents[2].stackSize += itemStack.stackSize;
+			if (contents[4].itemID == itemStack.itemID)
+				contents[4].stackSize += itemStack.stackSize;
 
 			--contents[1].stackSize;
+			--contents[2].stackSize;
+			--contents[3].stackSize;
 			--currentMilkAmount;
 
 			if (contents[1].stackSize <= 0)
 				contents[1] = null;
+			if (contents[2].stackSize <= 0)
+				contents[2] = null;
+			if (contents[3].stackSize <= 0)
+				contents[3] = null;
 		}
 	}
 

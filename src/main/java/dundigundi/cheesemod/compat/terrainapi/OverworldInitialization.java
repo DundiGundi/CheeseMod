@@ -3,6 +3,7 @@ package dundigundi.cheesemod.compat.terrainapi;
 import dundigundi.cheesemod.CheeseMod;
 import dundigundi.cheesemod.block.CheeseModBlocks;
 import dundigundi.cheesemod.world.WorldFeatureSaltBlock;
+import dundigundi.cheesemod.world.WorldFeatureScallionPlant;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
@@ -28,8 +29,8 @@ public class OverworldInitialization extends BaseInitialization {
 
 	@Override
 	protected void initRandom() {
-		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureSaltBlock(), 1, -1, 6,
-				new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_RAINFOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_TAIGA, Biomes.OVERWORLD_SHRUBLAND});
+		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureScallionPlant(), 1, -1, 1,
+				new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_SEASONAL_FOREST,});
 	}
 
 	@Override

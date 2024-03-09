@@ -27,14 +27,17 @@ public class CheeseModItems {
 	public static Item cheeseBlock;
 	public static Item rennet;
 	public static Item cowStomach;
+	public static Item bacterium;
+	public static Item scallion;
 
 	public void initializeItems() {
 		cheeseSlice = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("cheeseSlice",nextItemID("cheeseSlice"), 1, false, 4), "cheeseSlice.png");
 		knife = ItemHelper.createItem(MOD_ID, new ItemToolKnife("knife", nextItemID("knife"), 2, ToolMaterial.wood), "knife.png");
-		knife.setContainerItem(knife);
 		salt = ItemHelper.createItem(MOD_ID, new Item("salt",nextItemID( "salt")), "salt.png").setMaxStackSize(64);
 		cheeseBlock = ItemHelper.createItem(MOD_ID, new ItemPlaceable("cheeseBlock", nextItemID("cheeseBlock"), CheeseModBlocks.blockOfCheese).setMaxStackSize(1), "cheeseBlock.png");
 		cowStomach = ItemHelper.createItem(MOD_ID, new Item("cowStomach", nextItemID("cowStomach")), "cowStomach.png").setMaxStackSize(1);
-		rennet = ItemHelper. createItem(MOD_ID, new Item("rennet", nextItemID("rennet")),"rennet.png").setMaxStackSize(16);
+		rennet = ItemHelper.createItem(MOD_ID, new Item("rennet", nextItemID("rennet")),"rennet.png").setMaxStackSize(16);
+		bacterium = ItemHelper.createItem(MOD_ID, new Item("bacterium", nextItemID("bacterium")), "bacterium.png").setMaxStackSize(16);
+		scallion = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("scallion", nextItemID("scallion"), 1, false, 4), "scallion.png");
 	}
 }

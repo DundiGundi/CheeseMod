@@ -10,7 +10,6 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
 import sunsetsatellite.catalyst.Catalyst;
 
 public class BlockCheeseMaker extends BlockTileEntity {

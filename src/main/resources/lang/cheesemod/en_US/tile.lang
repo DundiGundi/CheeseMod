@@ -15,3 +15,6 @@ tile.cheesemod.block.salt.desc=Must be salty
 
 tile.cheesemod.cheeseMaker.name=Cheese Maker
 tile.cheesemod.cheeseMaker.desc =It makes cheese. Trust me!
+
+tile.cheesemod.block.scallion.name=Scallion Plant
+tile.cheesemod.block.scallion.desc =You can cut it for scallions

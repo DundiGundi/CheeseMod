@@ -5,8 +5,11 @@ import dundigundi.cheesemod.CheeseModTags;
 import dundigundi.cheesemod.block.entity.TileEntityCheeseMaker;
 import dundigundi.cheesemod.gui.ContainerCheeseMaker;
 import dundigundi.cheesemod.gui.GuiCheeseMaker;
+import net.minecraft.client.render.block.model.BlockModel;
+import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockTallGrass;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -36,6 +39,7 @@ public class CheeseModBlocks {
 
 	//Food
 	public static Block blockOfCheese;
+	public static Block blockScallion;
 
 	//Machines
 	public static Block cheeseMaker;
@@ -72,12 +76,18 @@ public class CheeseModBlocks {
 				.setResistance(0.5f)
 				.setHardness(0.5f)
 				.setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH);
+
 		BlockBuilder machineBuilder = new BlockBuilder(MOD_ID)
 				.setBlockSound(BlockSounds.WOOD)
 				.setTextures(11, 3)
 				.setResistance(2.5f)
 				.setHardness(2.5f)
 				.setTags(BlockTags.MINEABLE_BY_AXE);
+
+		BlockBuilder plantBuilder = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.GRASS)
+				.setHardness(0.0f)
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH);
 
 		oreSaltStone = oreBuilder
 				.setTextures("oreSalt_stone.png")
@@ -104,6 +114,10 @@ public class CheeseModBlocks {
 				.setTextures("cheeseMakerSides.png")
 				.setTopTexture("cheeseMakerTop.png")
 				.build(new BlockCheeseMaker("cheeseMaker", nextBlockID("cheeseMaker"), Material.wood));
+		blockScallion = plantBuilder
+				.setTextures("scallionPlant.png")
+				.setBlockModel(new BlockModelRenderBlocks(1))
+				.build(new BlockTallGrass("block.scallion", nextBlockID("blockScallion")).setKilledByWeather());
 
 		registerGUIs();
 		initializeTiles();

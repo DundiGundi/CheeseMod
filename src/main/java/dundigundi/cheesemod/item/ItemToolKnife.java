@@ -41,6 +41,15 @@ public class ItemToolKnife extends ItemTool {
 				itemstack.damageItem(1, entity);
 			}
 		}
+		if (!(entity == null || entity.world.isClientSide || id != CheeseModBlocks.blockScallion.id)) {
+			if (this.material.isSilkTouch()) {
+				entity.world.dropItem(x, y, z, new ItemStack(Item.itemsList[id]));
+				itemstack.damageItem(1, entity);
+			} else {
+				entity.world.dropItem(x, y, z, new ItemStack(CheeseModItems.scallion, 2));
+				itemstack.damageItem(1, entity);
+			}
+		}
 		return super.onBlockDestroyed(world, itemstack, id, x, y, z, entity);
 	}
 }

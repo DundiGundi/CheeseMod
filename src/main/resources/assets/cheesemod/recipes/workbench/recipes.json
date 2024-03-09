@@ -1,5 +1,38 @@
 [
   {
+    "name": "cheesemod:workbench/knife",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "  F",
+      " F ",
+      "S  "
+    ],
+    "symbols": [
+      {
+        "symbol": "F",
+        "stack": {
+          "key": "item.flint",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "S",
+        "stack": {
+          "key": "item.stick",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.cheesemod.knife",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": false
+  },
+  {
     "name": "cheesemod:workbench/rennet",
     "type": "minecraft:crafting/shapeless",
     "inputs": [
@@ -23,6 +56,55 @@
     ],
     "result": {
       "key": "item.cheesemod.rennet",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": false
+  },
+  {
+    "name": "cheesemod:workbench/cheeseMaker",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CHC",
+      "CBC",
+      "SSS"
+    ],
+    "symbols": [
+      {
+        "symbol": "H",
+        "stack": {
+          "key": "item.tool.shovel.wood",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "B",
+        "stack": {
+          "key": "item.bucket",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "tile.cobble.stone",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "S",
+        "stack": {
+          "key": "tile.slab.cobble.stone",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.cheesemod.cheeseMaker",
       "amount": 1,
       "meta": 0
     },

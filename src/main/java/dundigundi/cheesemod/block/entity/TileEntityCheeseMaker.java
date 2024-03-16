@@ -101,36 +101,38 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 			currentCheeseMakerTime = 0;
 
 		boolean cheeseMakerUpdated = false;
+		boolean makingCheese = false;
 
-		if (worldObj.getBlockId(x, y, z) == CheeseModBlocks.cheeseMaker.id &&
-				currentCheeseMakerTime == 0 &&
-				contents[2] == null) {
-			BlockCheeseMaker.updateBlockState(true, worldObj, x, y, z);
-			cheeseMakerUpdated = true;
-		}
-
-		boolean makingCheese;
-
-		if (canProduce()) {
-			++currentCheeseMakerTime;
-			makingCheese = true;
-
-			if (currentCheeseMakerTime == maxCheeseMakerTime) {
-				currentCheeseMakerTime = 0;
-				produceItem();
-				makingCheese = false;
+		if (this.worldObj != null && !this.worldObj.isClientSide) {
+			if (worldObj.getBlockId(x, y, z) == CheeseModBlocks.cheeseMaker.id &&
+					currentCheeseMakerTime == 0 &&
+					contents[2] == null) {
+				BlockCheeseMaker.updateBlockState(true, worldObj, x, y, z);
 				cheeseMakerUpdated = true;
 			}
-		} else {
-			currentCheeseMakerTime = 0;
-			makingCheese = false;
+
+			if (canProduce()) {
+				++currentCheeseMakerTime;
+				makingCheese = true;
+
+				if (currentCheeseMakerTime == maxCheeseMakerTime) {
+					currentCheeseMakerTime = 0;
+					produceItem();
+					makingCheese = false;
+					cheeseMakerUpdated = true;
+				}
+			} else {
+				currentCheeseMakerTime = 0;
+				makingCheese = false;
+			}
 		}
 
 		if (cheeseMakerUpdated)
 			onInventoryChanged();
 
-		if (makingCheese)
+		if (makingCheese) {
 			worldObj.notifyBlockChange(x, y, z, CheeseModBlocks.cheeseMaker.id);
+		}
 	}
 
 	@Override

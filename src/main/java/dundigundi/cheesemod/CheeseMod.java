@@ -11,11 +11,7 @@ public class CheeseMod implements ModInitializer, GameStartEntrypoint {
 	public static String MOD_ID = "cheesemod";
 	public static Logger logger = LoggerFactory.getLogger(MOD_ID);
 
-	/*
-	to complete
-	?
-	profit
-
+	/*TODO
 	content:
 		salt blocks spawn in desert like a small lake
 		later herbs for other cheese types(can buff the player(???))

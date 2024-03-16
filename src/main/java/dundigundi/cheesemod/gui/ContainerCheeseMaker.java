@@ -11,7 +11,6 @@ import net.minecraft.core.player.inventory.slot.Slot;
 import java.util.List;
 
 public class ContainerCheeseMaker extends Container {
-	private int milkBucketAmount = 0;
 	private int currentCheeseMakerTime = 0;
 	InventoryPlayer inventory;
 	TileEntityCheeseMaker tileEntity;
@@ -19,11 +18,11 @@ public class ContainerCheeseMaker extends Container {
 	public ContainerCheeseMaker(InventoryPlayer inventory, TileEntityCheeseMaker tileEntity) {
 		this.inventory = inventory;
 		this.tileEntity = tileEntity;
-		addSlot(new Slot(tileEntity, 0, 28, 55)); //milk bucket slot
-		addSlot(new Slot(tileEntity, 1, 72, 15)); //rennet slot
-		addSlot(new Slot(tileEntity, 2, 72, 35)); //salt slot
-		addSlot(new Slot(tileEntity, 3, 72, 55)); //bacterium slot
-		addSlot(new Slot(tileEntity, 4, 128, 35)); // produced good slot
+		addSlot(new Slot(tileEntity, 0, 18, 54)); //milk bucket slot
+		addSlot(new Slot(tileEntity, 1, 53, 58)); //rennet slot
+		addSlot(new Slot(tileEntity, 2, 80, 58)); //salt slot
+		addSlot(new Slot(tileEntity, 3, 107, 58)); //bacterium slot
+		addSlot(new Slot(tileEntity, 4, 80, 13)); // produced good slot
 
 		for(int xSlot = 0; xSlot < 3; ++xSlot)
 			for (int ySlot = 0; ySlot < 9; ++ySlot)
@@ -45,10 +44,10 @@ public class ContainerCheeseMaker extends Container {
 			if (target == 2) {
 				return this.getSlots(4, 1, false);
 			}
-			if (slot.id >= 5 && slot.id <= 31) {
+			if (slot.id <= 31) {
 				return this.getSlots(32, 9, false);
 			}
-			if (slot.id >= 32 && slot.id <= 40) {
+			if (slot.id >= 32) {
 				return this.getSlots(5, 27, false);
 			}
 		}
@@ -64,6 +63,7 @@ public class ContainerCheeseMaker extends Container {
 			if (this.currentCheeseMakerTime != tileEntity.currentCheeseMakerTime)
 				crafter.updateCraftingInventoryInfo(this, 0, tileEntity.currentCheeseMakerTime);
 		}
+		this.currentCheeseMakerTime = this.tileEntity.currentCheeseMakerTime;
 	}
 
 	@Override

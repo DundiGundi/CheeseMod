@@ -14,8 +14,6 @@ public class CheeseMod implements ModInitializer, GameStartEntrypoint {
 	/*TODO
 	content:
 		salt blocks spawn in desert like a small lake
-		later herbs for other cheese types(can buff the player(???))
-		under it heatsource
 	bugfix:
 	*/
 

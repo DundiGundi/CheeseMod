@@ -11,12 +11,6 @@ public class CheeseMod implements ModInitializer, GameStartEntrypoint {
 	public static String MOD_ID = "cheesemod";
 	public static Logger logger = LoggerFactory.getLogger(MOD_ID);
 
-	/*TODO
-	content:
-		salt blocks spawn in desert like a small lake
-	bugfix:
-	*/
-
 	@Override
 	public void onInitialize() {
 		logger.info("Cheese Mod has been initialised!");

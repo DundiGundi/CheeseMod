@@ -13,7 +13,6 @@ import net.minecraft.core.player.inventory.IInventory;
 
 public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	private final RecipesCheeseMaker recipes = new RecipesCheeseMaker();
-	private boolean makingCheese = false;
 	public int currentCheeseMakerTime = 0;
 	public int maxCheeseMakerTime = 400;
 	public int currentMilkAmount = 0;
@@ -110,6 +109,8 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 			cheeseMakerUpdated = true;
 		}
 
+		boolean makingCheese;
+
 		if (canProduce()) {
 			++currentCheeseMakerTime;
 			makingCheese = true;
@@ -136,6 +137,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	public void writeToNBT(CompoundTag CompoundTag) {
 		super.writeToNBT(CompoundTag);
 		CompoundTag.putInt("CheeseMakerTime", currentCheeseMakerTime);
+		CompoundTag.putInt("MilkAmount", currentMilkAmount);
 
 		ListTag listTag = new ListTag();
 		for (int i = 0; i < contents.length; i++) {
@@ -154,6 +156,7 @@ public class TileEntityCheeseMaker extends TileEntity implements IInventory {
 	public void readFromNBT(CompoundTag CompoundTag) {
 		super.readFromNBT(CompoundTag);
 		currentCheeseMakerTime = CompoundTag.getInteger("CheeseMakerTime");
+		currentMilkAmount = CompoundTag.getInteger("MilkAmount");
 
 		ListTag listTag = CompoundTag.getList("Items");
 

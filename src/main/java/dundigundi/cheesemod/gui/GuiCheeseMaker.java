@@ -19,8 +19,8 @@ public class GuiCheeseMaker extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer() {
 		I18n i18n = I18n.getInstance();
-		this.fontRenderer.drawString("Cheese Maker", 60, 6, 4210752);
-		this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 3, 4210752);
+		this.fontRenderer.drawString("Cheese Maker", 60, 4, 4210752);
+		this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 4, 4210752);
 	}
 
 	@Override
@@ -33,10 +33,10 @@ public class GuiCheeseMaker extends GuiContainer {
 		int scrnY = (height - ySize) / 2;
 		drawTexturedModalRect(scrnX, scrnY, 0, 0, xSize, ySize);
 
-		int cheeseMakerTime =  tileEntity.maxCheeseMakerTime == 0 ? 0 : tileEntity.currentCheeseMakerTime * 22 / tileEntity.maxCheeseMakerTime;
-		drawTexturedModalRect(scrnX + 96, scrnY + 35, 177, 0, cheeseMakerTime, 16);
+		int cheeseMakerTime =  tileEntity.maxCheeseMakerTime == 0 ? 0 : tileEntity.currentCheeseMakerTime * 24 / tileEntity.maxCheeseMakerTime;
+		drawTexturedModalRect(scrnX + 59, scrnY + 54 - cheeseMakerTime + 2, 177, 56 - cheeseMakerTime, 57, cheeseMakerTime);
 		int milkAmount = tileEntity.currentMilkAmount * 8;
-		drawTexturedModalRect(scrnX + 28, scrnY + 48 - milkAmount + 1, 177, 17, 16, milkAmount);
+		drawTexturedModalRect(scrnX + 18, scrnY + 47 - milkAmount + 1, 177, 0, 16, milkAmount);
 	}
 
 	@Override
